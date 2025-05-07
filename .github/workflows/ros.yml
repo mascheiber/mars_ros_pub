@@ -32,12 +32,9 @@ jobs:
       # BADGE_CREATION: ${{ github.event_name == 'push' && github.repository_owner == 'aau-cns' }}
       BADGE_CREATION: ${{ github.event_name == 'push' && github.repository_owner == 'mascheiber' }}
       GIST_ID: 0f67471a9de2f593f970ca8811c8cc5e
+      ACTIONS_RUNNER_FORCE_ACTIONS_NODE_VERSION: node16
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     steps:
-    - name: "Setup NodeJS"
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
     - name: Create Badge (running)
       if: ${{ env.BADGE_CREATION == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
