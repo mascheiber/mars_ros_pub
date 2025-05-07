@@ -21,7 +21,7 @@ on:
 jobs:
   ros_ci:
     name: ROS ${{ matrix.ROS_DISTRO }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     container: ros:${{ matrix.ROS_DISTRO }}-ros-core
     strategy:
       # fail-fast needs to be false to perform all matrix checks, even if one fails
